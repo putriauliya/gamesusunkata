@@ -79,19 +79,19 @@ public class Responsi2 {
         int kapasitas = 0;
         switch (pilih_jadwal) {
             case 1:
-                kapasitas = 7;
+                kapasitas = 3;
                 break;
             case 2:
-                kapasitas = 5;
+                kapasitas = 3;
                 break;
             case 3:
-                kapasitas = 9;
+                kapasitas = 3;
                 break;
             case 4:
-                kapasitas = 14;
+                kapasitas = 3;
                 break;
             case 5:
-                kapasitas = 11;
+                kapasitas = 3;
                 break;
         }
         int kursi = 0;
