@@ -50,7 +50,7 @@ public class Responsi2 {
         System.out.println("========================= Jadwal Kereta ========================");
         System.out.println("NB  | Kereta           | Berangkat-Tiba           | Keterangan |");
         for (int x = 0; x < kereta.length; x++) {
-            System.out.println((x + 1) + "   | " + kereta[x] + "  | " + jadwal[x] + "     | Tersedia   |");
+            System.out.println((x + 1) + "   | " + kereta[x] + "  | " + jadwal[x] + "     | 3 Kursi   |");
         }
 
     }
@@ -59,7 +59,7 @@ public class Responsi2 {
         System.out.println("========================= Jadwal Kereta ========================");
         System.out.println("NB  | Kereta           | Berangkat-Tiba           | Keterangan |");
         for (int x = 0; x < kereta.length; x++) {
-            System.out.println((x + 1) + "   | " + kereta[x] + "  | " + jadwal[x] + "     | Tersedia   |");
+            System.out.println((x + 1) + "   | " + kereta[x] + "  | " + jadwal[x] + "     | 3 Kursi   |");
         }
 
         System.out.println("================================================================");
@@ -100,8 +100,7 @@ public class Responsi2 {
             System.out.print("Jumlah Kursi      : ");
             kursi = input.nextInt();
             if (kursi > kapasitas) {
-                System.out.println("jumlah kursi yang dipesan melebihi kapasitas yang tersedia."
-                        + "Ulangi memasukkan jumlah kursi.");
+                System.out.println("kursi telah habis");
             }
         } while (kursi > kapasitas);
 
