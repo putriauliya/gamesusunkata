@@ -26,7 +26,8 @@ public class Responsi2 {
             System.out.println("3.\tKeluar");
             System.out.println("============================================");
             System.out.print("Masukkan Pilihan (1/2/3) : ");
-
+            
+            try{
             pilih_menu = input.nextInt();
 
             System.out.println("");
@@ -44,8 +45,11 @@ public class Responsi2 {
                 default:
                     System.out.println("Pilihan Tidak Tersedia");
 
+            }}catch(Exception e){
+                System.out.println("Inputan Harus Angka");
+                input.nextLine();
             }
-            System.out.print("ingin kembali ke menu awal ?(Y/T) ");//
+            System.out.print("Ingin Kembali Ke Menu Awal ?(y/t) ");//
             ulang = input.next().charAt(0);
         } while (ulang == 'Y' || ulang == 'y');
     }
@@ -90,7 +94,7 @@ public class Responsi2 {
             System.out.print("No HP             : ");
             nohp = input.next();
 
-            System.out.print("apakah data sudah benar ?(Y/T) ");
+            System.out.print("Apakah Data Sudah Benar ?(y/t) ");
             ulang = input.next().charAt(0);
         } while (ulang == 'T' || ulang == 't');
 
