@@ -31,7 +31,8 @@ public class Responsi2 {
     static String nama, noidn, nohp;
     static int pilih_jadwal;
     static String kereta[] = {"Penataran      ", "Penataran Dhoho", "Tumapel        ", "Penataran Dhoho", "Penataran Dhoho"};
-    static String jadwal[] = {"07.08 ML - 09.52 SBY", "10.20 ML - 13.09 TA ", "04.30 ML - 05.41 BG ", "14.35 ML - 19.34 JG ", "07.10 ML - 11.22 KD "};
+    static String jadwal[] = {"07.08 AM - 09.52 AM (Malang-Surabaya)   ", "10.20 AM - 01.09 PM (Malang-Tulungagung)", "04.30 AM - 05.41 AM (Malang-Bangil)     ", "02.35 PM - 07.34 PM (Malang-Jombang)    ", "07.10 AM - 11.22 AM (Malang-Kediri)     "};
+    static int no_kursi = 1;
     static int harga = 15000;
     static char ulang;
     static int count[] = {0, 0, 0, 0, 0};
@@ -71,28 +72,29 @@ public class Responsi2 {
             }
             System.out.print("Ingin Kembali Ke Menu Awal ?(y/t) ");//
             ulang = input.next().charAt(0);
+            no_kursi++;
         } while (ulang == 'Y' || ulang == 'y');
     }
 
     public static void jadwal() {
-        System.out.println("========================= Jadwal Kereta ========================");
-        System.out.println("NB  | Kereta           | Berangkat-Tiba           | Keterangan |");
+        System.out.println("============================ Jadwal Kereta ============================");
+        System.out.println("NB  | Kereta           | Berangkat-Tiba                               | ");
         for (int x = 0; x < kereta.length; x++) {
-            System.out.println((x + 1) + "   | " + kereta[x] + "  | " + jadwal[x] + "     | 3 Kursi    |");
+            System.out.println((x + 1) + "   | " + kereta[x] + "  | " + jadwal[x] + "     | ");
         }
 
     }
 
     public static void transaksi() {
-        System.out.println("========================= Jadwal Kereta ========================");
-        System.out.println("NB  | Kereta           | Berangkat-Tiba           | Keterangan |");
+        System.out.println("============================ Jadwal Kereta ============================");
+        System.out.println("NB  | Kereta           | Berangkat-Tiba                               | ");
         for (int x = 0; x < kereta.length; x++) {
-            System.out.println((x + 1) + "   | " + kereta[x] + "  | " + jadwal[x] + "     | 3 Kursi    |");
+            System.out.println((x + 1) + "   | " + kereta[x] + "  | " + jadwal[x] + "     | ");
         }
         do {
-            System.out.println("================================================================");
-            System.out.println("                             Pemesanan                          ");
-            System.out.println("================================================================");
+            System.out.println("=======================================================================");
+            System.out.println("                                Pemesanan                              ");
+            System.out.println("=======================================================================");
             int c = 1;
             while (c != 0) {
                 System.out.print("Masukkan Pilihan  : ");
@@ -123,12 +125,12 @@ public class Responsi2 {
             ulang = input.next().charAt(0);
         } while (ulang == 'T' || ulang == 't');
 
-        System.out.println("================================================================");
-        System.out.println("                             Pembayaran                         ");
-        System.out.println("================================================================");
+        System.out.println("=======================================================================");
+        System.out.println("                               Pembayaran                              ");
+        System.out.println("=======================================================================");
         int total = 1 * harga;
-        System.out.println("Total Bayar     : " + total);
-        System.out.print("Bayar           : ");
+        System.out.println("Total Bayar     : Rp. " + total);
+        System.out.print("Bayar           : Rp. ");
 
         int bayar = 0;
         do {
@@ -136,24 +138,25 @@ public class Responsi2 {
             bayar = input.nextInt();
             if (bayar < total) {
                 System.out.println("Maaf, Uang anda kurang");
-                System.out.print("Bayar           : ");
+                System.out.print("Bayar           : Rp. ");
 
             } else {
             }
         } while (bayar < total);
 
         int kembalian = bayar - total;
-        System.out.println("Kembalian       : " + kembalian);
+        System.out.println("Kembalian       : Rp. " + kembalian);
 
         Responsi2 tgl = new Responsi2();
-
-        System.out.println("================================================================");
+        
+        System.out.println("=======================================================================");
         System.out.println("|||||||||||||||||||||||||||||||||||||||||");
         System.out.println("               Tiket Kereta              ");
         System.out.println("-----------------------------------------");
         System.out.println("Nama Penumpang    : " + nama);
         System.out.println("No Identitas      : " + noidn);
         System.out.println("Kereta            : " + kereta[(pilih_jadwal - 1)]);
+        System.out.println("No Kursi          : A" + no_kursi);
         System.out.println("Berangkat-Tiba    : " + jadwal[(pilih_jadwal - 1)]);
         System.out.println("Tanggal           : " + tgl.getTanggal());
         System.out.println("-----------------------------------------");
