@@ -1,10 +1,29 @@
 package responsi2;
 
-import java.util.Scanner;
+import java.text.*;
+import java.util.*;
 
 public class Responsi2 {
 
+    private String getTanggal() {
+        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyy");
+        Date date = new Date();
+        return dateFormat.format(date);
+    } // membuat function getTanggal untuk memanggil data tanggal yang akan ditampilkan pada console
+
+    private String getWaktu() {
+        DateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
+        Date date = new Date();
+        return dateFormat.format(date);
+    } // membuat function getTanggal untuk memanggil data tanggal yang akan ditampilkan pada console
+
     public static void main(String[] args) {
+        Responsi2 tgl = new Responsi2();
+        System.out.println("Tanggal : " + tgl.getTanggal());
+        System.out.println("Pukul   : " + tgl.getWaktu());
+        System.out.println();
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+
         menu_awal();
     }
 
@@ -26,26 +45,27 @@ public class Responsi2 {
             System.out.println("3.\tKeluar");
             System.out.println("============================================");
             System.out.print("Masukkan Pilihan (1/2/3) : ");
-            
-            try{
-            pilih_menu = input.nextInt();
 
-            System.out.println("");
-            switch (pilih_menu) {
-                case 1:
-                    jadwal();
-                    break;
-                case 2:
-                    transaksi();
-                    break;
-                case 3:
-                    System.exit(0);
-                    break;
+            try {
+                pilih_menu = input.nextInt();
 
-                default:
-                    System.out.println("Pilihan Tidak Tersedia");
+                System.out.println("");
+                switch (pilih_menu) {
+                    case 1:
+                        jadwal();
+                        break;
+                    case 2:
+                        transaksi();
+                        break;
+                    case 3:
+                        System.exit(0);
+                        break;
 
-            }}catch(Exception e){
+                    default:
+                        System.out.println("Pilihan Tidak Tersedia");
+
+                }
+            } catch (Exception e) {
                 System.out.println("Inputan Harus Angka");
                 input.nextLine();
             }
@@ -76,11 +96,16 @@ public class Responsi2 {
             int c = 1;
             while (c != 0) {
                 System.out.print("Masukkan Pilihan  : ");
-                pilih_jadwal = input.nextInt();
-                if (count[pilih_jadwal - 1] < 3) {
-                    c = 0;
-                } else {
-                    System.out.println("Maaf Kursi Sudah Habis");
+                try {
+                    pilih_jadwal = input.nextInt();
+                    if (count[pilih_jadwal - 1] < 3) {
+                        c = 0;
+                    } else {
+                        System.out.println("Maaf Kursi Sudah Habis");
+                    }
+                } catch (Exception e) {
+                    System.out.println("Inputan Harus Angka");
+                    input.nextLine();
                 }
             }
 
@@ -120,15 +145,17 @@ public class Responsi2 {
         int kembalian = bayar - total;
         System.out.println("Kembalian       : " + kembalian);
 
+        Responsi2 tgl = new Responsi2();
+
         System.out.println("================================================================");
         System.out.println("|||||||||||||||||||||||||||||||||||||||||");
         System.out.println("               Tiket Kereta              ");
         System.out.println("-----------------------------------------");
         System.out.println("Nama Penumpang    : " + nama);
         System.out.println("No Identitas      : " + noidn);
-        System.out.println("No HP             : " + nohp);
         System.out.println("Kereta            : " + kereta[(pilih_jadwal - 1)]);
         System.out.println("Berangkat-Tiba    : " + jadwal[(pilih_jadwal - 1)]);
+        System.out.println("Tanggal           : " + tgl.getTanggal());
         System.out.println("-----------------------------------------");
         System.out.println("|||||||||||||||||||||||||||||||||||||||||");
 
