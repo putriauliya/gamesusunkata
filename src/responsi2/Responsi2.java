@@ -113,6 +113,7 @@ public class Responsi2 {
 
             count[pilih_jadwal - 1] += 1;
             System.out.println("Kereta            : " + kereta[(pilih_jadwal - 1)]);
+            System.out.println("No Kursi          : A" + no_kursi);
             System.out.println("Berangkat-Tiba    : " + jadwal[(pilih_jadwal - 1)]);
             System.out.print("Nama Penumpang    : ");
             nama = input.next();
@@ -150,17 +151,17 @@ public class Responsi2 {
         Responsi2 tgl = new Responsi2();
         
         System.out.println("=======================================================================");
-        System.out.println("|||||||||||||||||||||||||||||||||||||||||");
-        System.out.println("               Tiket Kereta              ");
-        System.out.println("-----------------------------------------");
+        System.out.println("||||||||||||||||||||||||||||||||||||||||||||||||||||||||");
+        System.out.println("                        Tiket Kereta                    ");
+        System.out.println("--------------------------------------------------------");
         System.out.println("Nama Penumpang    : " + nama);
         System.out.println("No Identitas      : " + noidn);
         System.out.println("Kereta            : " + kereta[(pilih_jadwal - 1)]);
         System.out.println("No Kursi          : A" + no_kursi);
         System.out.println("Berangkat-Tiba    : " + jadwal[(pilih_jadwal - 1)]);
         System.out.println("Tanggal           : " + tgl.getTanggal());
-        System.out.println("-----------------------------------------");
-        System.out.println("|||||||||||||||||||||||||||||||||||||||||");
+        System.out.println("--------------------------------------------------------");
+        System.out.println("||||||||||||||||||||||||||||||||||||||||||||||||||||||||");
 
     }
 
