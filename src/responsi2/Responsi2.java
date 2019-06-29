@@ -32,6 +32,7 @@ public class Responsi2 {
     static int pilih_jadwal;
     static String kereta[] = {"Penataran      ", "Penataran Dhoho", "Tumapel        ", "Penataran Dhoho", "Penataran Dhoho"};
     static String jadwal[] = {"07.08 AM - 09.52 AM (Malang-Surabaya)   ", "10.20 AM - 01.09 PM (Malang-Tulungagung)", "04.30 AM - 05.41 AM (Malang-Bangil)     ", "02.35 PM - 07.34 PM (Malang-Jombang)    ", "07.10 AM - 11.22 AM (Malang-Kediri)     "};
+    static String kursi[] = {"A", "B", "C", "D", "E"};
     static int no_kursi = 1;
     static int harga = 15000;
     static char ulang;
@@ -113,7 +114,7 @@ public class Responsi2 {
 
             count[pilih_jadwal - 1] += 1;
             System.out.println("Kereta            : " + kereta[(pilih_jadwal - 1)]);
-            System.out.println("No Kursi          : A" + no_kursi);
+            System.out.println("No Kursi          : " + kursi[(pilih_jadwal - 1)] + no_kursi);
             System.out.println("Berangkat-Tiba    : " + jadwal[(pilih_jadwal - 1)]);
             System.out.print("Nama Penumpang    : ");
             nama = input.next();
@@ -149,7 +150,7 @@ public class Responsi2 {
         System.out.println("Kembalian       : Rp. " + kembalian);
 
         Responsi2 tgl = new Responsi2();
-        
+
         System.out.println("=======================================================================");
         System.out.println("||||||||||||||||||||||||||||||||||||||||||||||||||||||||");
         System.out.println("                        Tiket Kereta                    ");
@@ -157,7 +158,7 @@ public class Responsi2 {
         System.out.println("Nama Penumpang    : " + nama);
         System.out.println("No Identitas      : " + noidn);
         System.out.println("Kereta            : " + kereta[(pilih_jadwal - 1)]);
-        System.out.println("No Kursi          : A" + no_kursi);
+        System.out.println("No Kursi          : " + kursi[(pilih_jadwal - 1)] + no_kursi);
         System.out.println("Berangkat-Tiba    : " + jadwal[(pilih_jadwal - 1)]);
         System.out.println("Tanggal           : " + tgl.getTanggal());
         System.out.println("--------------------------------------------------------");
